@@ -13,12 +13,12 @@ public class Humano extends Jogador{
     
     @Override
     public void jogar(Tabuleiro tabuleiro){ //metodo herdado da classe jogador
-        Tentativa(tabuleiro);
+        tentativa(tabuleiro);
         tabuleiro.setPosicao(tentativa, jogador); //seta a posicao no tabuleiro passando o numero da tentativa e qual jogador a fez
     }
     
     @Override
-    public void Tentativa(Tabuleiro tabuleiro){ //metodo herdado da classe jogador
+    public void tentativa(Tabuleiro tabuleiro){ //metodo herdado da classe jogador
         do{
             do{
                 System.out.print("Linha: ");
@@ -41,9 +41,9 @@ public class Humano extends Jogador{
             tentativa[0]--;
             tentativa[1]--;
 
-            if(!checaTentativa(tentativa, tabuleiro)) //se a tentativa de jogada ja foi utilizada retorna mensagem informtiva
+            if(!posicaoEstahLivre(tentativa, tabuleiro)) //se a tentativa de jogada ja foi utilizada retorna mensagem informtiva
                 System.out.println("Esse local j? foi marcado. Tente outro.");
         }
-        while(!checaTentativa(tentativa, tabuleiro) );//executa enquanto a tentativa informada for valida
+        while(!posicaoEstahLivre(tentativa, tabuleiro) );//executa enquanto a tentativa informada for valida
     }
 }

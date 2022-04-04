@@ -12,13 +12,9 @@ public abstract class Jogador {
     
     public abstract void jogar(Tabuleiro tabuleiro);
     
-    public abstract void Tentativa(Tabuleiro tabuleiro);
-
-    public boolean checaTentativa(int[] tentativa, Tabuleiro tabuleiro){ //metodo para validar as tentativas disponiveis
-        if(tabuleiro.getPosicao(tentativa) == 0)
-            return true;
-        else
-            return false;
-            
+    public abstract void tentativa(Tabuleiro tabuleiro);
+    
+    protected boolean posicaoEstahLivre(int[] tentativa, Tabuleiro tabuleiro){ //metodo para validar as tentativas disponiveis
+        return tabuleiro.getPosicao(tentativa) == 0;
     }
 }
